@@ -1,0 +1,30 @@
+<div>
+	<h3 style="text-align:center;">{{ _('MakerOS Settings' )}}</h3>
+	<div style="clear:both;">
+		<p style="text-align:center;">
+			API Connection Settings <br>
+			<sub>On the initial connection to the API a MakerOS folder will be created in the files section of OctoPrint</sub>
+		</p>
+		
+	</div>
+	<form class="form-horizontal">
+		<div class="control-group">
+			<label class="control-label">{{ _('API Base URL:') }}</label>	
+			<div class="controls">
+				<input type="text" class="input-block-level" data-bind="value: settings.plugins.MakerOS.api_settings.apiBaseUrl"/>	
+			</div>
+		</div>	
+		<div class="control-group">
+			<label class="control-label">{{ _('Provider ID:') }}</label>	
+			<div class="controls">
+				<input type="text" class="input-block-level" data-bind="value: settings.plugins.MakerOS.api_settings.apiId"/>	
+			</div>
+		</div>	
+		<div class="control-group">
+			<label class="control-label">{{ _('API Key:') }}</label>	
+			<div class="controls">
+				<input type="text" class="input-block-level" data-bind="value: settings.plugins.MakerOS.api_settings.apiKey"/>	
+			</div>
+		</div>
+	</form>
+</div>	

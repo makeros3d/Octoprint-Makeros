@@ -1,0 +1,4 @@
+include README.md
+recursive-include octoprint_MakerOS/templates *
+recursive-include octoprint_MakerOS/translations *
+recursive-include octoprint_MakerOS/static *

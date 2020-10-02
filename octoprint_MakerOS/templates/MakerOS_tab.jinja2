@@ -1,0 +1,70 @@
+<div class="makeros-container">
+	<div class="makeros-topnav" style="grid-area: topnav;">
+		<button style="width: 100%" data-bind="click: getProjects">Show Projects</button>
+	</div>
+	<div class="makeros-main" style="grid-area: main;" data-bind="if: projectsFetched() == true">
+		<div class="makeros-main-nav">
+			<input type="text" data-bind="value: search">
+		</div>
+		<hr>
+		<div data-bind="if: showProject() != true">
+			<!-- ko foreach: splitProjects -->
+			<div class="makeros-info">
+				<div style="grid-area: item;">
+					<a class="makeros-project-list" data-bind="text: title, click: function($data) {getProject($data.id)}" style="text-align: left;"></a>
+				</div>
+				<div style="grid-area: date;">
+					<span data-bind="text: updated"</span> 
+				</div>
+			</div>
+			<!-- /ko -->
+		</div>
+		<div data-bind="if: showProject() == true">
+			<ul>
+				<div class="makeros-header-grid">
+					<span class="makeros-header">Title</span>
+					<li style="list-style: none;" data-bind="text: currentProject.title"></li>
+				</div>
+				<div class="makeros-header-grid">
+					<span class="makeros-header">Description</span>
+					<li style="list-style: none;" data-bind="text: currentProject.desc"></li>
+				</div>
+				<div class="makeros-header-grid">
+					<span class="makeros-header">Progress</span>
+					<li style="list-style: none;" data-bind="text: currentProject.prog"></li>
+				</div>
+				<div class="makeros-header-grid">
+					<span class="makeros-header">Created</span>
+					<li style="list-style: none;" data-bind="text: currentProject.created"></li>
+				</div>
+				<div class="makeros-header-grid">
+					<span class="makeros-header">Updated</span>
+					<li style="list-style: none;" data-bind="text: currentProject.updated"></li>
+				</div>
+				<div data-bind="if: hasCura() != true">
+					<h4 data-bind="if: checkStl && currentProject.files().length > 0">STLs Require CuraEngine Legacy Plugin to be Installed</h4>
+				</div>
+				<div data-bind="foreach: currentProject.files">
+					<li style="cursor: pointer; list-style: none;" data-bind="click: function() { $root.downloadFile($data) }">
+						<a data-bind="text: name"></a>
+					</li>
+				</div>
+			</ul>		
+		</div>
+	</div>
+	<div class="makeros-pagination" style="grid-area: pagination;" data-bind="if: projectsFetched() == true && showProject() != true">
+		<div class="makeros-btn-set1">
+			<span class="makeros-button1" data-bind="click: function() { firstPage() }">↞</span>
+			<span data-bind="click: function() { prevPage() }">←</span>
+		</div>
+		<div class="makeros-pagination-list" data-bind="foreach: pageList()">
+			<li class="makeros-pagination-numbers" data-bind="click: $root.changePage">
+				<a href="#" data-bind="text: ($data)"></a>
+			</li>
+		</div>
+		<div class="makeros-btn-set2">
+			<span data-bind="click: function() { nextPage() }">→</span>
+			<span class="makeros-button2" data-bind="click: function() { lastPage() }">↠</span>
+		</div>
+	</div>
+</div>

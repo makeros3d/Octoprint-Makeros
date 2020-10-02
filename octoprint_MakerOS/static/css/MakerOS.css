@@ -1,0 +1,89 @@
+/* TODO: Have your plugin's CSS files generated to here. */
+.makeros-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-row-gap: .5rem;
+    grid-template-areas: 
+    "topnav"
+    "main"
+    "pagination";
+
+    border: 1px solid #b9b9b9;
+    border-radius: 6px;
+}
+
+.makeros-topnav  {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.makeros-main {
+    padding: 1rem;
+}
+
+.makeros-main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.makeros-info {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-areas: 
+    "item date";
+}
+
+.makeros-pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 3rem;
+    padding-top: 1rem;
+}
+
+.makeros-pagination-list {
+    width: 10rem;
+    text-align: center;
+}
+
+.makeros-pagination-numbers {
+    display: inline-block;
+}
+
+span {
+    cursor: pointer;
+}
+
+.makeros-button1 {
+    margin-right: 1rem;
+}
+.makeros-button2 {
+    margin-left: 1rem;
+}
+
+.makeros-btn-set1 {
+    font-size: 28px;
+}
+.makeros-btn-set2 {
+    font-size: 28px;
+}
+
+.makeros-project-list {
+    display: block;
+    cursor: pointer;
+}
+
+.makeros-header-grid {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-column-gap: .7rem;
+    padding: .3rem;
+}
+
+.makeros-header {
+    font-weight: 600;
+}
