@@ -11,6 +11,9 @@ On the initial call to the MakerOS API a MakerOS folder will be created in your
 files. From there, upon downloading a file, a project specific folder will be 
 created for you within the MakerOS folder.
 
+![MakerOS plugin projects](assets/Octoprint-Makeros-projects.png)
+![MakerOS plugin project](assets/Octoprint-Makeros-project.png)
+
 > Please note that downloading .STL files will require you to install the
 CuraEngine Legacy plugin which can be installed in the same way as you
 installed the MakerOS plugin.
@@ -30,3 +33,6 @@ or manually using this URL:
 Find the settings in the plugin settings
 section of OctoPrint and add your API URL, API Key, and Provider ID
 in the given fields.
+
+![MakerOS plugin settings](assets/Octoprint-Makeros-settings.png)
+
