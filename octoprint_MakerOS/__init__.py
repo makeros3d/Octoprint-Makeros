@@ -134,8 +134,11 @@ class MakerosPlugin(octoprint.plugin.SettingsPlugin,
                         os.mkdir(project_dir)
                     file_write = os.path.join(project_dir, file_name)
                     with requests.get(url, stream=True) as r:
-                        with open (file_write, 'a') as f:
-                            f.write(r.content)
+                        r.raise_for_status()
+                        with open(file_write, 'wb') as f:
+                            for chunk in r.iter_content(chunk_size=8192):
+                                f.write(chunk)
+                    self._logger.info(f"Successfully downloaded {file_name}")
                 except:
                         self._logger.error("There was an issue fetching " + \
                                            "MakerOS files.")
