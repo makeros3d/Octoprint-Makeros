@@ -27,7 +27,7 @@ plugin_author = "Thomas Lawton"
 plugin_author_email = "thomas@makeros.com"
 
 # The plugin's homepage URL. Can be overwritten within OctoPrint's internal data via __plugin_url__ in the plugin module
-plugin_url = "https://github.com/you/OctoPrint-Makeros"
+plugin_url = "https://github.com/makeros3d/OctoPrint-Makeros"
 
 # The plugin's license. Can be overwritten within OctoPrint's internal data via __plugin_license__ in the plugin module
 plugin_license = "AGPLv3"
