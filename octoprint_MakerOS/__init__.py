@@ -138,7 +138,7 @@ class MakerosPlugin(octoprint.plugin.SettingsPlugin,
                         with open(file_write, 'wb') as f:
                             for chunk in r.iter_content(chunk_size=8192):
                                 f.write(chunk)
-                    self._logger.info(f"Successfully downloaded {file_name}")
+                    self._logger.info("Successfully downloaded {}".format(filename))
                 except:
                         self._logger.error("There was an issue fetching " + \
                                            "MakerOS files.")
@@ -176,7 +176,7 @@ class MakerosPlugin(octoprint.plugin.SettingsPlugin,
                         )
                 )
 
-__plugin_pythoncompat__ = ">=3,<4"
+__plugin_pythoncompat__ = ">=2.7,<4"
 
 # If you want your plugin to be registered within OctoPrint under a different name than what you defined in setup.py
 # ("OctoPrint-PluginSkeleton"), you may define that here. Same goes for the other metadata derived from setup.py that
