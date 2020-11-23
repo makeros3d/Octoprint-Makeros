@@ -10,7 +10,6 @@ from __future__ import absolute_import, unicode_literals
 # Take a look at the documentation on what other plugin mixins are available.
 
 import octoprint.plugin
-import flask
 
 class MakerosPlugin(octoprint.plugin.SettingsPlugin,
                     octoprint.plugin.AssetPlugin,
@@ -138,7 +137,7 @@ class MakerosPlugin(octoprint.plugin.SettingsPlugin,
                         with open(file_write, 'wb') as f:
                             for chunk in r.iter_content(chunk_size=8192):
                                 f.write(chunk)
-                    self._logger.info("Successfully downloaded {}".format(filename))
+                    self._logger.info("Successfully downloaded {}".format(file_name))
                 except:
                         self._logger.error("There was an issue fetching " + \
                                            "MakerOS files.")
@@ -156,7 +155,7 @@ class MakerosPlugin(octoprint.plugin.SettingsPlugin,
 
         ##~~ Softwareupdate hook
 
-        def get_update_information(*args, **kwargs):
+        def get_update_information(self):
                 # Define the configuration for your plugin to use with the Software Update
                 # Plugin here. See https://docs.octoprint.org/en/master/bundledplugins/softwareupdate.html
                 # for details.
